@@ -1,6 +1,6 @@
 require "nvchad.options"
 
--- add yours here!
+vim.opt.linebreak = true 
+vim.opt.wrap = true
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+
