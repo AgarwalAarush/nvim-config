@@ -8,6 +8,7 @@ return function()
     lspconfig['pyright'].setup(add_to_default {
         settings = {
             python = {
+                pythonPath = "/Users/aarushagarwal/miniconda3/envs/MachineLearning/bin/python3",
                 analysis = {
                     -- stubPath = gistubgen_out_path,
                 },
