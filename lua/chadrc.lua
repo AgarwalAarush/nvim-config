@@ -5,13 +5,12 @@
 local M = {}
 
 M.ui = {
-	theme = "chadracula-evondev",
+	theme = "jabuti",
 
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
-  
   statusline = {
     theme = "default",
     separator_style = "round"
