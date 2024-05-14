@@ -21,6 +21,11 @@ return {
     end,
     ft = { "markdown" },
   },
+  ---------- UI ----------
+  {
+    "baliestri/aura-theme",
+    lazy = false,
+  },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
