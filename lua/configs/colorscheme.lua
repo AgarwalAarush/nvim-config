@@ -1,10 +1,18 @@
 local icons = require("nvim-web-devicons")
-local BG = "#17191c"
-local ALMOST_BG = "#1c1e20"
+-- local BG = "#17191c"
+local BG = "#1F1F2E"
+-- local ALMOST_BG = "#1c1e20"
+local ALMOST_BG = "#2a2a42"
 local WHITE = "#9da2af"
 local GRAY = "#80838f"
 local FADED_GRAY = "#33373a"
 local STRONG_FADED_GRAY = "#2a2d30"
+
+local STRONG_WHITE = "#BDBDBD"
+local PURPLE = "#8A62CC"
+local GREEN = "#00C89D"
+local LIGHT_ORANGE = "#CE9E67"
+local BLUE = "#52B4CA"
 
 local options = {
   colors = {
@@ -31,6 +39,9 @@ local options = {
       CursorLineNr = { fg = c.oniViolet },
       CursorLine = { bg = ALMOST_BG },
       WinSeparator = { fg = ALMOST_BG },
+
+      -- statusline
+      StatusLine = { bg = BG },
 
       -- bufferline
       BufferLineFill = { bg = BG },
@@ -75,6 +86,27 @@ local options = {
       NvimTreeDefault = { fg = GRAY },
       NvimTreeSymlink = { fg = GRAY },
       NvimTreeBookmark = { fg = GRAY },
+
+      ["@function"] = { fg = LIGHT_ORANGE },
+      ["@method"] =  { fg = LIGHT_ORANGE },
+      ["@constructor"] = { fg = PURPLE },
+      ["@parameter"] = { fg = STRONG_WHITE },
+      ["@variable"] = { fg = STRONG_WHITE },
+      ["@constant"] = { fg = STRONG_WHITE },
+      ["@boolean"] = { fg = PURPLE },
+      ["@number"] = { fg = GREEN },
+      ["@float"] = { fg = GREEN },
+      ["@string"] = { fg = GREEN },
+      ["@character"] = { fg = GREEN },
+      ["@operator"] = { fg = STRONG_WHITE },
+      ["@keyword"] = { fg = PURPLE },
+      ["@conditional"] = { fg = PURPLE },
+      ["@include"] = { fg = PURPLE },
+      ["@define"] = { fg = LIGHT_ORANGE },
+      ["@type"] = { fg = BLUE },
+      ["@preproc"] = { fg = PURPLE },
+      ["@typedef"] = { fg = BLUE },
+
     }
 
     -- change color of icons

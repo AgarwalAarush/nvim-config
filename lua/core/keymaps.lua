@@ -47,11 +47,10 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 -- nvim tree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "nvimtree toggle window on current file" })
+map("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "nvimtree toggle window on current file" })
 map("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "collapse nvimtree" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
 
--- treesitter
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })

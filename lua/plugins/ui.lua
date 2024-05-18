@@ -33,11 +33,18 @@ return {
     config = function(_, opts)
       local telescope = require "telescope"
       telescope.setup(opts)
-
-      -- load extensions
-      -- for _, ext in ipairs(opts.extensions_list) do
-      --   telescope.load_extension(ext)
-      -- end
     end,
   },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   version = "*",
+  --   dependencies = "nvim-tree/nvim-web-devicons",
+  --   opts = function()
+  --     return require "configs.bufferline"
+  --   end,
+  --   config = function(_, opts)
+  --     local bufferline = require "bufferline"
+  --     bufferline.setup(opts)
+  --   end,
+  -- }
 }
