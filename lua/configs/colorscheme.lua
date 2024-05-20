@@ -107,6 +107,8 @@ local options = {
       ["@preproc"] = { fg = PURPLE },
       ["@typedef"] = { fg = BLUE },
 
+      ["Normal"] = { fg = PURPLE },
+
     }
 
     -- change color of icons
