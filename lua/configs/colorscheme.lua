@@ -1,7 +1,7 @@
 local icons = require("nvim-web-devicons")
 -- local BG = "#17191c"
-local BG = "#1F1F2E"
--- local BG = "#15141C"
+-- local BG = "#1F1F2E"
+local BG = "#15141C"
 -- local ALMOST_BG = "#1c1e20"
 local ALMOST_BG = "#2a2a42"
 local WHITE = "#9da2af"
@@ -99,11 +99,13 @@ local options = {
       ["@boolean"] = { fg = PURPLE },
       ["@number"] = { fg = GREEN },
       ["@float"] = { fg = GREEN },
+      ["@attribute"] = { fg = BLUE },
       ["@string"] = { fg = GREEN },
       ["@character"] = { fg = GREEN },
       ["@operator"] = { fg = PURPLE },
       ["@keyword"] = { fg = PURPLE },
       ["@keyword.return"] = { fg = PURPLE },
+      ["@keyword.import"] = { fg = PURPLE },
       ["@conditional"] = { fg = PURPLE },
       ["@include"] = { fg = PURPLE },
       ["@define"] = { fg = LIGHT_ORANGE },
@@ -113,6 +115,16 @@ local options = {
       ["@storageClass"] = { fg = BLUE },
       ["@structure"] = { fg = PURPLE },
       ["@typedef"] = { fg = BLUE },
+
+      -- Miscellaneous
+      ["@constructor"] = { fg = LIGHT_ORANGE },
+      ["@variable.builtin"] = { fg = PURPLE },
+      ["@variable.parameter"] = { fg = STRONG_WHITE },
+      ["@function.builtin"] = { fg = LIGHT_ORANGE },
+
+      -- PYTHON SPECIFIC --
+      ["@variable.member"] = { fg = BLUE },
+      ["@variable.python"] = { fg = BLUE},
 
     }
 
