@@ -35,17 +35,28 @@ return {
       telescope.setup(opts)
     end,
   },
-  
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   version = "*",
-  --   dependencies = "nvim-tree/nvim-web-devicons",
-  --   opts = function()
-  --     return require "configs.bufferline"
-  --   end,
-  --   config = function(_, opts)
-  --     local bufferline = require "bufferline"
-  --     bufferline.setup(opts)
-  --   end,
-  -- }
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function(_)
+      local bufferline = require "bufferline"
+      bufferline.setup({
+        options = {
+          always_show_bufferline = true,
+          show_buffer_close_icons = false,
+          enforce_regular_tabs = true,
+          offsets = {
+            {
+              filetype = "nvimtree",
+            },
+          },
+          indicator = {
+            style = "none",
+          },
+          modified_icon = "",
+        }
+      })
+    end,
+  }
 }
