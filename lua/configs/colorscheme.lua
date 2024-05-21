@@ -1,6 +1,7 @@
 local icons = require("nvim-web-devicons")
 -- local BG = "#17191c"
 local BG = "#1F1F2E"
+-- local BG = "#15141C"
 -- local ALMOST_BG = "#1c1e20"
 local ALMOST_BG = "#2a2a42"
 local WHITE = "#9da2af"
@@ -15,6 +16,7 @@ local LIGHT_ORANGE = "#CE9E67"
 local BLUE = "#52B4CA"
 
 local options = {
+  keywordStyle = { italic = false },
   colors = {
     theme = {
       all = {
@@ -93,21 +95,24 @@ local options = {
       ["@parameter"] = { fg = STRONG_WHITE },
       ["@variable"] = { fg = STRONG_WHITE },
       ["@constant"] = { fg = STRONG_WHITE },
+      ["@constant.builtin"] = { fg = PURPLE },
       ["@boolean"] = { fg = PURPLE },
       ["@number"] = { fg = GREEN },
       ["@float"] = { fg = GREEN },
       ["@string"] = { fg = GREEN },
       ["@character"] = { fg = GREEN },
-      ["@operator"] = { fg = STRONG_WHITE },
+      ["@operator"] = { fg = PURPLE },
       ["@keyword"] = { fg = PURPLE },
+      ["@keyword.return"] = { fg = PURPLE },
       ["@conditional"] = { fg = PURPLE },
       ["@include"] = { fg = PURPLE },
       ["@define"] = { fg = LIGHT_ORANGE },
       ["@type"] = { fg = BLUE },
       ["@preproc"] = { fg = PURPLE },
+      ["@include"] = { fg = PURPLE },
+      ["@storageClass"] = { fg = BLUE },
+      ["@structure"] = { fg = PURPLE },
       ["@typedef"] = { fg = BLUE },
-
-      ["Normal"] = { fg = PURPLE },
 
     }
 

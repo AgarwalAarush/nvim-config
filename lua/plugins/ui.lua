@@ -11,6 +11,23 @@ return {
     end,
   },
   -- colorscheme
+  -- {
+  --   "baliestri/aura-theme",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function(plugin)
+  --     vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+  --     vim.cmd([[colorscheme aura-soft-dark-soft-text]])
+  --   end
+  -- },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme catppuccin]])
+  --   end,
+  -- },
   {
     "rebelot/kanagawa.nvim",
     dependencies = "nvim-web-devicons",
