@@ -12,8 +12,34 @@ map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
+-- navigation
 map("n", "<tab>", ":bnext<CR>", { desc = "buffer goto next" })
 map("n", "<S-tab>", ":bprevious<CR>", { desc = "buffer goto prev" })
+
+local reopen_nvim_tree = false
+local function close_nvim_tree_if_needed()
+  -- Get all opened buffers
+  local buffers = vim.api.nvim_list_bufs()
+  
+  -- Find nvim-tree buffer by name pattern
+  for _, buffer_nr in ipairs(buffers) do
+    local buf_name = vim.api.nvim_buf_get_name(buffer_nr)
+    if buf_name and buf_name:match("NvimTree_") then
+      reopen_nvim_tree = true
+      vim.cmd("NvimTreeToggle")
+      break -- Exit loop after finding and closing nvim-tree
+    end
+  end
+end
+
+map("n", "<leader>x", function()
+  close_nvim_tree_if_needed()
+  vim.cmd "bdelete"
+  if reopen_nvim_tree == true then
+    vim.cmd("NvimTreeToggle")
+    reopen_nvim_tree = false
+  end
+end, { desc = "delete a buffer", noremap = true })
 
 -- line numbers
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
@@ -23,11 +49,6 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>fm", function()
   require("conform").format { lsp_fallback = true }
 end, { desc = "format files" })
-
--- miscellaneous
-map("n", "<leader>x", function()
-  require("nvchad.tabufline").close_buffer()
-end, { desc = "buffer close" })
 
 -- comment
 map("n", "<leader>/", function()
