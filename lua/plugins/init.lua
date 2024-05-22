@@ -127,9 +127,8 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    event = "User FilePost",
     config = function()
-      require("configs.lspconfig").defaults()
+      require("configs.lsp.lspconfig").defaults()
       require "configs.personal_lspconfig"
     end,
   },

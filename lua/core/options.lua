@@ -28,7 +28,6 @@ opt.fillchars = { eob = " " }
 
 opt.clipboard:append("unnamedplus")
 opt.cursorline = true
--- opt.cursorlineopt = "number"
 
 opt.laststatus = 3
 opt.showmode = false
@@ -38,6 +37,8 @@ opt.iskeyword:append("-")
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.background = "dark"
+
+-- opt.hlsearch = false
 
 -- interval for writing swap file to disk, used by gitsigns
 opt.updatetime = 250

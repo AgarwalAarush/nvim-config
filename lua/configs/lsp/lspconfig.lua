@@ -1,6 +1,6 @@
 local M = {}
 local map = vim.keymap.set
-local signature_conf = require "signature"
+local signature_conf = require "configs.lsp.signature"
 
 -- export on_attach & capabilities
 M.on_attach = function(client, bufnr)
@@ -72,18 +72,18 @@ M.defaults = function()
         diagnostics = {
           globals = { "vim" },
         },
-        -- workspace = {
-        --   library = {
-        --     [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-        --     [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-        --     [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
-        --     [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
-        --   },
+        workspace = {
+          library = {
+            [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+            [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+            -- [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
+            [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+          },
           maxPreload = 100000,
           preloadFileSize = 10000,
         },
-      },
-    },
+      }
+    }
   }
 end
 

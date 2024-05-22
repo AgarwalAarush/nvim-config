@@ -1,8 +1,8 @@
-local on_attach = require("configs.lspconfig").on_attach
-local on_init = require("configs.lspconfig").on_init
-local capabilities = require("configs.lspconfig").capabilities
+local on_attach = require("configs.lsp.lspconfig").on_attach
+local on_init = require("configs.lsp.lspconfig").on_init
+local capabilities = require("configs.lsp.lspconfig").capabilities
 
-local lspconfig = require "configs.lspconfig"
+local lspconfig = require "lspconfig"
 local servers = { "html", "cssls", "clangd"}
 
 -- lsps with default config
