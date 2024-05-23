@@ -22,7 +22,7 @@ M.on_attach = function(client, bufnr)
   map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
 
   map("n", "<leader>ra", function()
-    require "renamer"()
+    require "configs.lsp.renamer"()
   end, opts "Renamer")
 
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
@@ -30,7 +30,7 @@ M.on_attach = function(client, bufnr)
 
   -- setup signature popup
   if signature_conf and client.server_capabilities.signatureHelpProvider then
-    require("signature").setup(client, bufnr)
+    require("configs.lsp.signature").setup(client, bufnr)
   end
 end
 
@@ -76,7 +76,7 @@ M.defaults = function()
           library = {
             [vim.fn.expand "$VIMRUNTIME/lua"] = true,
             [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-            -- [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
+            [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
             [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
           },
           maxPreload = 100000,

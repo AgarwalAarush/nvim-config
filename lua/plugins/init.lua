@@ -129,7 +129,7 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require("configs.lsp.lspconfig").defaults()
-      require "configs.personal_lspconfig"
+      require "configs.lspconfig"
     end,
   },
   {
