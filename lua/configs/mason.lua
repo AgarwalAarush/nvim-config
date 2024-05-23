@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua-language-server",  'stylua', "html-lsp", "css-lsp", "pyright", "basedpyright", "clangd", "python-lsp-server" },
+  ensure_installed = { "lua-language-server",  'stylua', "html-lsp", "css-lsp", "pyright", "basedpyright", "clangd", },
 
   PATH = "skip",
 
