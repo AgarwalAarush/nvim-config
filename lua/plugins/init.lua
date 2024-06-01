@@ -132,13 +132,13 @@ return {
       require "configs.lspconfig"
     end,
   },
-  {
-    "neovim/nvim-lspconfig",
-    event = "User FilePost",
-    config = function()
-      require "configs.lsp.lspconfig"
-    end,
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   event = "User FilePost",
+  --   config = function()
+  --     require "configs.lsp.lspconfig"
+  --   end,
+  -- },
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
