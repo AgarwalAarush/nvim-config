@@ -132,13 +132,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   event = "User FilePost",
-  --   config = function()
-  --     require "configs.lsp.lspconfig"
-  --   end,
-  -- },
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -154,6 +147,16 @@ return {
         end
       end, {})
       vim.g.mason_binaries_list = opts.ensure_installed
+    end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "User FilePost",
+    opts = function()
+      return require "configs.gitsigns"
+    end,
+    config = function(_, opts)
+      require("gitsigns").setup(opts)
     end,
   }
 }
