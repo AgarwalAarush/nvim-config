@@ -79,6 +79,25 @@ local options = {
       end
     end, { "i", "s" }),
   },
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(_, item)
+      local label_width = 45
+      local label = item.abbr
+      local truncated_label = vim.fn.strcharpart(label, 0, label_width)
+
+      if truncated_label ~= label then
+        item.abbr = truncated_label .. "…"
+      elseif string.len(label) < label_width then
+        local padding = string.rep(" ", label_width - string.len(label))
+        item.abbr = label .. padding
+      end
+
+      item.menu = item.kind
+      item.kind = kind_icons[item.kind]
+      return item
+    end,
+  },
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
@@ -87,3 +106,5 @@ local options = {
     { name = "path" },
   },
 }
+
+return options
