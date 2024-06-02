@@ -19,10 +19,10 @@ local config = {
     height = 0.4,
     border = "single"
   },
-  hl = "NormalFloat",
+  hl = "Normal:term,WinSeparator:WinSeparator",
   sizes = {
-    sp = 0.4,
-    vsp = 0.5,
+    sp = 0.3,
+    vsp = 0.2,
   }
 }
 
