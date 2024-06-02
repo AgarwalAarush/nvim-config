@@ -31,7 +31,11 @@ end
 
 map("n", "<leader>x", function()
   close_nvim_tree_if_needed()
-  vim.cmd "bdelete"
+  if vim.bo.buftype == "terminal" then
+    vim.cmd "bdelete!"
+  else
+    vim.cmd "bdelete"
+  end
   if reopen_nvim_tree == true then
     vim.cmd("NvimTreeToggle")
     reopen_nvim_tree = false
@@ -107,6 +111,8 @@ end, { desc = "terminal new horizontal term" })
 map({ "n", "t" }, "<A-i>", function()
   require("configs.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
+
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- clear highlights
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
