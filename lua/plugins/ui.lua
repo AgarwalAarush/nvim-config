@@ -58,5 +58,30 @@ return {
         }
       })
     end,
-  }
+  },
+  -- Noice Config
+  {
+    "MunifTanjim/nui.nvim",
+  },
+  {
+    "rcarriga/nvim-notify",
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    config = function()
+      require("noice").setup({
+        presets = {
+          long_message_to_split = true,
+          lsp_doc_border = true,
+        },
+      })
+    end,
+  },
 }

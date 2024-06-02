@@ -20,7 +20,6 @@ local reopen_nvim_tree = false
 local function close_nvim_tree_if_needed()
   -- Get all opened buffers
   local buffers = vim.api.nvim_list_bufs()
-  
   -- Find nvim-tree buffer by name pattern
   for _, buffer_nr in ipairs(buffers) do
     local buf_name = vim.api.nvim_buf_get_name(buffer_nr)
@@ -88,3 +87,25 @@ map(
   "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
   { desc = "telescope find all files" }
 )
+
+-- Terminal
+map("n", "<leader>h", function()
+  require("configs.term").new { pos = "sp" }
+end, { desc = "terminal new horizontal term" })
+
+map("n", "<leader>v", function()
+  require("configs.term").new { pos = "vsp" }
+end, { desc = "terminal new vertical window" })
+
+-- toggleable
+map({ "n", "t" }, "<A-v>", function()
+  require("configs.term").toggle { pos = "vsp", id = "vtoggleTerm" }
+end, { desc = "terminal toggleable vertical term" })
+
+map({ "n", "t" }, "<A-h>", function()
+  require("configs.term").toggle { pos = "sp", id = "htoggleTerm" }
+end, { desc = "terminal new horizontal term" })
+
+map({ "n", "t" }, "<A-i>", function()
+  require("configs.term").toggle { pos = "float", id = "floatTerm" }
+end, { desc = "terminal toggle floating term" })
