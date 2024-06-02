@@ -18,15 +18,13 @@ map("n", "<S-tab>", ":bprevious<CR>", { desc = "buffer goto prev" })
 
 local reopen_nvim_tree = false
 local function close_nvim_tree_if_needed()
-  -- Get all opened buffers
   local buffers = vim.api.nvim_list_bufs()
-  -- Find nvim-tree buffer by name pattern
   for _, buffer_nr in ipairs(buffers) do
     local buf_name = vim.api.nvim_buf_get_name(buffer_nr)
     if buf_name and buf_name:match("NvimTree_") then
       reopen_nvim_tree = true
       vim.cmd("NvimTreeToggle")
-      break -- Exit loop after finding and closing nvim-tree
+      break
     end
   end
 end
@@ -109,3 +107,6 @@ end, { desc = "terminal new horizontal term" })
 map({ "n", "t" }, "<A-i>", function()
   require("configs.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
+
+-- clear highlights
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
