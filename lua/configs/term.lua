@@ -10,7 +10,21 @@ local pos_data = {
   vsp = { resize = "width", area = "columns" },
 }
 
-local config = require("configs").term
+local config = {
+  float = {
+    relative = "editor",
+    row = 0.3,
+    col = 0.25,
+    width = 0.5,
+    height = 0.4,
+    border = "single"
+  },
+  hl = "NormalFloat",
+  sizes = {
+    sp = 0.4,
+    vsp = 0.5,
+  }
+}
 
 -- used for initially resizing terms
 vim.g.nvhterm = false
