@@ -31,8 +31,7 @@ return {
       return require "configs.telescope"
     end,
     config = function(_, opts)
-      local telescope = require "telescope"
-      telescope.setup(opts)
+      require("telescope").setup(opts)
     end,
   },
   {
@@ -84,4 +83,17 @@ return {
       })
     end,
   },
+  {
+    'stevearc/aerial.nvim',
+    opts = function()
+      return require "configs.aerial"
+    end,
+    config = function(_, opts)
+      require("aerial").setup(opts)
+    end,
+    dependencies = {
+       "nvim-treesitter/nvim-treesitter",
+       "nvim-tree/nvim-web-devicons"
+    },
+  }
 }

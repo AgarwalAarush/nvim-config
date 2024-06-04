@@ -116,3 +116,6 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- clear highlights
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
+
+-- aerial
+map("n", "<leader>aa", "<cmd>AerialToggle<CR>", { desc = "aerial toggle" })
