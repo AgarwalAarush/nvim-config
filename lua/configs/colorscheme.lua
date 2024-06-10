@@ -1,19 +1,24 @@
 local icons = require("nvim-web-devicons")
--- local BG = "#17191c"
--- local BG = "#1F1F2E"
 local BG = "#15141C"
--- local ALMOST_BG = "#1c1e20"
 local ALMOST_BG = "#2a2a42"
 local WHITE = "#9da2af"
 local GRAY = "#80838f"
 local FADED_GRAY = "#33373a"
 local STRONG_FADED_GRAY = "#2a2d30"
 
+-- Default Config
 local STRONG_WHITE = "#BDBDBD"
 local PURPLE = "#8A62CC"
 local GREEN = "#00C89D"
 local LIGHT_ORANGE = "#CE9E67"
 local BLUE = "#52B4CA"
+
+-- Custom Config
+local LIGHT_PURPLE = "#9B62AE"
+local FADED_GREEN = "#21887A"
+local YELLOW = "#E3CD66"
+local ORANGE = "#D68C1C"
+local LIGHT_GRAY = "#B5B6B8"
 
 local options = {
   keywordStyle = { italic = false },
@@ -89,27 +94,64 @@ local options = {
       NvimTreeSymlink = { fg = GRAY },
       NvimTreeBookmark = { fg = GRAY },
 
-      ["@function"] = { fg = LIGHT_ORANGE },
-      ["@method"] =  { fg = LIGHT_ORANGE },
-      ["@constructor"] = { fg = PURPLE },
+      ------------------ Default Config ------------------
+      -- ["@function"] = { fg = LIGHT_ORANGE },
+      -- ["@method"] =  { fg = LIGHT_ORANGE },
+      -- ["@constructor"] = { fg = PURPLE },
+      -- ["@parameter"] = { fg = STRONG_WHITE },
+      -- ["@variable"] = { fg = STRONG_WHITE },
+      -- ["@constant"] = { fg = STRONG_WHITE },
+      -- ["@constant.builtin"] = { fg = PURPLE },
+      -- ["@boolean"] = { fg = PURPLE },
+      -- ["@number"] = { fg = GREEN },
+      -- ["@float"] = { fg = GREEN },
+      -- ["@attribute"] = { fg = BLUE },
+      -- ["@string"] = { fg = GREEN },
+      -- ["@character"] = { fg = GREEN },
+      -- ["@operator"] = { fg = PURPLE },
+      -- ["@keyword"] = { fg = PURPLE },
+      -- ["@keyword.return"] = { fg = PURPLE },
+      -- ["@keyword.import"] = { fg = PURPLE },
+      -- ["@conditional"] = { fg = PURPLE },
+      -- ["@define"] = { fg = LIGHT_ORANGE },
+      -- ["@type"] = { fg = BLUE },
+      -- ["@preproc"] = { fg = PURPLE },
+      -- ["@include"] = { fg = PURPLE },
+      -- ["@storageClass"] = { fg = BLUE },
+      -- ["@structure"] = { fg = PURPLE },
+      -- ["@typedef"] = { fg = BLUE },
+      --
+      -- -- Miscellaneous
+      -- ["@variable.builtin"] = { fg = PURPLE },
+      -- ["@variable.parameter"] = { fg = STRONG_WHITE },
+      -- ["@function.builtin"] = { fg = LIGHT_ORANGE },
+      --
+      -- -- PYTHON SPECIFIC --
+      -- ["@variable.member"] = { fg = STRONG_WHITE },
+      -- ["@variable.python"] = { fg = STRONG_WHITE },
+
+      ------------------ Custom Config ------------------
+      ["@function"] = { fg = YELLOW },
+      ["@method"] =  { fg = FADED_GREEN },
+      ["@constructor"] = { fg = FADED_GREEN },
       ["@parameter"] = { fg = STRONG_WHITE },
-      ["@variable"] = { fg = STRONG_WHITE },
-      ["@constant"] = { fg = STRONG_WHITE },
+      ["@variable"] = { fg = FADED_GREEN },
+      ["@constant"] = { fg = FADED_GREEN },
       ["@constant.builtin"] = { fg = PURPLE },
-      ["@boolean"] = { fg = PURPLE },
-      ["@number"] = { fg = GREEN },
+      ["@boolean"] = { fg = LIGHT_PURPLE },
+      ["@number"] = { fg = LIGHT_PURPLE },
       ["@float"] = { fg = GREEN },
       ["@attribute"] = { fg = BLUE },
-      ["@string"] = { fg = GREEN },
+      ["@string"] = { fg = ORANGE },
       ["@character"] = { fg = GREEN },
-      ["@operator"] = { fg = PURPLE },
-      ["@keyword"] = { fg = PURPLE },
+      ["@operator"] = { fg = STRONG_WHITE },
+      ["@keyword"] = { fg = FADED_GREEN },
       ["@keyword.return"] = { fg = PURPLE },
-      ["@keyword.import"] = { fg = PURPLE },
+      ["@keyword.import"] = { fg = FADED_GREEN },
+      ["@keyword.operator"] = { fg = FADED_GREEN },
       ["@conditional"] = { fg = PURPLE },
-      ["@include"] = { fg = PURPLE },
       ["@define"] = { fg = LIGHT_ORANGE },
-      ["@type"] = { fg = BLUE },
+      ["@type"] = { fg = FADED_GREEN },
       ["@preproc"] = { fg = PURPLE },
       ["@include"] = { fg = PURPLE },
       ["@storageClass"] = { fg = BLUE },
@@ -117,14 +159,13 @@ local options = {
       ["@typedef"] = { fg = BLUE },
 
       -- Miscellaneous
-      ["@constructor"] = { fg = LIGHT_ORANGE },
       ["@variable.builtin"] = { fg = PURPLE },
-      ["@variable.parameter"] = { fg = STRONG_WHITE },
-      ["@function.builtin"] = { fg = LIGHT_ORANGE },
+      ["@variable.parameter"] = { fg = STRONG_WHITE, italic = true },
+      ["@function.builtin"] = { fg = YELLOW },
 
       -- PYTHON SPECIFIC --
-      ["@variable.member"] = { fg = BLUE },
-      ["@variable.python"] = { fg = BLUE},
+      ["@variable.member"] = { fg = STRONG_WHITE },
+      ["@variable.python"] = { fg = STRONG_WHITE },
 
     }
 
