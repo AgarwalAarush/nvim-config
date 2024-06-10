@@ -22,7 +22,7 @@ lspconfig.tsserver.setup {
 }
 
 -- python
-lspconfig.basedpyright.setup {
+lspconfig.pyright.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
