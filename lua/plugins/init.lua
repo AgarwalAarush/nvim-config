@@ -44,7 +44,7 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    init = function() 
+    init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
@@ -152,5 +152,20 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
+  },
+  {
+    "bullets-vim/bullets.vim",
+  },
+  {
+    "folke/zen-mode.nvim",
+    opts = function()
+      return require "configs.zen-mode"
+    end,
+    config = function(_, opts)
+      require("zen-mode").setup(opts)
+    end,
+  },
+  {
+    "folke/twilight.nvim",
   },
 }
