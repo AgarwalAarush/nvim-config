@@ -13,7 +13,10 @@ opt.smartindent = true
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.linebreak = true
-opt.textwidth = 178
+opt.textwidth = 120
+-- opt.formatoptions = "jcroqla"
+
+vim.g.bullets_outline_levels = {'ROM', 'ABC', 'num', 'abc', 'rom', 'std-', 'std*', 'std-'}
 
 -- casing
 opt.ignorecase = true
@@ -53,3 +56,5 @@ o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
+
+require("configs.tabufline.lazyload")

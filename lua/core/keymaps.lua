@@ -1,4 +1,15 @@
 local map = vim.keymap.set
+local api = vim.api
+local cur_buf = api.nvim_get_current_buf
+local set_buf = api.nvim_set_current_buf
+
+local function buf_index(bufnr)
+  for i, value in ipairs(vim.t.bufs) do
+    if value == bufnr then
+      return i
+    end
+  end
+end
 
 vim.g.mapleader = " "
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -13,34 +24,17 @@ map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- navigation
-map("n", "<tab>", ":bnext<CR>", { desc = "buffer goto next" })
-map("n", "<S-tab>", ":bprevious<CR>", { desc = "buffer goto prev" })
+map("n", "<tab>", function()
+  require("configs.tabufline").next()
+end, { desc = "buffer goto next" })
 
-local reopen_nvim_tree = false
-local function close_nvim_tree_if_needed()
-  local buffers = vim.api.nvim_list_bufs()
-  for _, buffer_nr in ipairs(buffers) do
-    local buf_name = vim.api.nvim_buf_get_name(buffer_nr)
-    if buf_name and buf_name:match("NvimTree_") then
-      reopen_nvim_tree = true
-      vim.cmd("NvimTreeToggle")
-      break
-    end
-  end
-end
+map("n", "<S-tab>", function()
+  require("configs.tabufline").prev()
+end, { desc = "buffer goto prev" })
 
 map("n", "<leader>x", function()
-  close_nvim_tree_if_needed()
-  if vim.bo.buftype == "terminal" then
-    vim.cmd "bdelete!"
-  else
-    vim.cmd "bdelete"
-  end
-  if reopen_nvim_tree == true then
-    vim.cmd("NvimTreeToggle")
-    reopen_nvim_tree = false
-  end
-end, { desc = "delete a buffer", noremap = true })
+  require("configs.tabufline").close_buffer()
+end, { desc = "close buffer" })
 
 -- line numbers
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })

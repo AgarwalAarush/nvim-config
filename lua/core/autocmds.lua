@@ -33,3 +33,31 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+-- local function set_textwidth_by_filename()
+--   local filename = vim.fn.expand("%:t")  -- Get the current file name
+--   vim.api.nvim_echo({ { "Setting textwidth for " .. filename, "Comment" } }, false, {})
+--   if filename:match("%.txt$") then
+--     vim.opt_local.textwidth = 120  -- Set textwidth for .txt files
+--   else
+--     vim.opt_local.textwidth = 178  -- Set textwidth for all other files
+--   end
+-- end
+--
+-- local function set_bullet_point_formatting()
+--   -- Set format options to include 'c' (comments), 'r' (continue comments), 'n' (recognize lists), and 'w' (trailing whitespace continues paragraphs)
+--   vim.opt_local.formatoptions = vim.opt_local.formatoptions + 'c' + 'r' + 'n' + 'w'
+--   -- Define comment strings for bullet points
+--   vim.opt_local.comments = "b:-,b:*,b:+"
+-- end
+--
+-- local function width_and_formatting()
+--   set_textwidth_by_filename()
+--   set_bullet_point_formatting()
+-- end
+--
+-- -- Create an autocmd for the BufRead event
+-- autocmd("BufEnter", {
+--   pattern = "*",
+--   callback = width_and_formatting(),
+-- })
