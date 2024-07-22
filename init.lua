@@ -1,18 +1,19 @@
-require("core.options")
-require("core.keymaps")
--- require("core.autocmds")
+require('keymaps')
+require('plugins.lazy')
+require('plugins.misc')
+require('plugins.lualine')
+require('options')
+require('misc')
+require('plugins.dap')
+require('plugins.gitsigns')
+require('plugins.tele')
+require('plugins.treesitter')
+require('plugins.lsp')
+require('plugins.trouble')
+require('plugins.obsidian')
+require('plugins.zenmode')
+require('plugins.neogit')
+require('plugins.codesnap')
+require('plugins.harpoon')
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup("plugins")
+-- vim: ts=8 sts=2 sw=2 et

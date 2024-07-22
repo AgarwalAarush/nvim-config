@@ -1,6 +1,6 @@
-local options = {
+require("zen-mode").setup({
   window = {
-    backdrop = 0.95,
+    backdrop = 0.95, 
     width = 120, -- width of the Zen window
     height = 1, -- height of the Zen window
     options = {
@@ -23,7 +23,7 @@ local options = {
       -- statusline will be shown only if 'laststatus' == 3
       laststatus = 0, -- turn off the statusline in zen mode
     },
-    twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+    twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
     gitsigns = { enabled = false }, -- disables git signs
     tmux = { enabled = true }, -- disables the tmux statusline
     wezterm = {
@@ -31,6 +31,5 @@ local options = {
       font = "+20", -- (10% increase per step)
     },
   },
-}
+})
 
-return options
