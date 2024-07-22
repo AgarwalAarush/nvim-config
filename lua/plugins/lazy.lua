@@ -54,15 +54,6 @@ require('lazy').setup({
     build = function() vim.fn["mkdp#util#install"]() end,
   },
   "preservim/vim-pencil",
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*",  -- recommended, use latest release instead of latest commit
-    lazy = true,
-    ft = "markdown",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   'folke/zen-mode.nvim',
   'tpope/vim-obsession',
   -- Tree
