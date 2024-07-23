@@ -57,4 +57,7 @@ o.splitright = true
 o.timeoutlen = 400
 o.undofile = true
 
+-- statusline
+o.laststatus = 0
+
 require("configs.tabufline.lazyload")
