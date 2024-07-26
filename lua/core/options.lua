@@ -60,4 +60,9 @@ o.undofile = true
 -- statusline
 o.laststatus = 0
 
+-- dap
+vim.fn.sign_define('DapBreakpoint', { text='🔴', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+
 require("configs.tabufline.lazyload")
+-- require("dapui").setup()
+-- require("dap-python").setup("/Users/aarushagarwal/miniconda3/envs/debugpy/bin/python")

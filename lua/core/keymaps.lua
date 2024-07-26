@@ -113,3 +113,13 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
 
 -- aerial
 map("n", "<leader>aa", "<cmd>AerialToggle<CR>", { desc = "aerial toggle" })
+
+-- dap
+map("n", "<leader>dt", ":DapUiToggle<CR>", { noremap = true })
+map("n", "<leader>db", ":DapToggleBreakpoint<CR>", { noremap = true })
+map("n", "<leader>dc", ":DapContinue<CR>", { noremap = true })
+map("n", "<leader>do", ":lua require('dapui').open({ reset = true })<CR>", { noremap = true })
+map("n", "<leader>dl", ":lua require('dapui').close({ reset = true })<CR>", { noremap = true })
+map("n", "<leader>de", ":DapTerminate<CR>", { noremap = true })
+
+-- map("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { noremap = true })

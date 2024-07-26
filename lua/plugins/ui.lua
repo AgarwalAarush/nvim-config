@@ -95,5 +95,25 @@ return {
        "nvim-treesitter/nvim-treesitter",
        "nvim-tree/nvim-web-devicons"
     },
-  }
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {"nvim-neotest/nvim-nio"},
+    config = function()
+      require("dapui").setup()
+      vim.api.nvim_command('command! DapUiToggle lua require("dapui").toggle()')
+      vim.api.nvim_command('command! DapUiOpen lua require("dapui").open()')
+      vim.api.nvim_command('command! DapUiClose lua require("dapui").close()')
+      vim.api.nvim_command('command! DapUiEval lua require("dapui").eval()')
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    config = function()
+      require("dap-python").setup("/Users/aarushagarwal/miniconda3/envs/debugpy/bin/python")
+    end,
+  },
 }
