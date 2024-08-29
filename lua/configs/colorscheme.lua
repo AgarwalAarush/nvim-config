@@ -167,6 +167,9 @@ local options = {
       ["@variable.member"] = { fg = STRONG_WHITE },
       ["@variable.python"] = { fg = STRONG_WHITE },
 
+      -- HTML SPECIFIC --
+      ["@tag"] = { fg = FADED_GREEN },
+
     }
 
     -- change color of icons
