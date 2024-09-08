@@ -170,6 +170,28 @@ local options = {
       -- HTML SPECIFIC --
       ["@tag"] = { fg = FADED_GREEN },
 
+      -- LATEX SPECIFIC --
+      ["texStatement"] = { fg = FADED_GREEN },
+      ["texInputFile"] = { fg = LIGHT_ORANGE },
+      ["texInputFileOpt"] = { fg = LIGHT_ORANGE },
+      ["texMatcherNM"] = { fg = LIGHT_ORANGE },
+      ["texLength"] = { fg = PURPLE },
+      ["texSection"] = { fg = FADED_GREEN },
+      ["texOnlyMath"] = { fg = WHITE },
+      ["texSpecialChar"] = { fg = LIGHT_ORANGE },
+      ["texMathZoneX"] = { fg = WHITE },
+      ["texMathZoneY"] = { fg = WHITE },
+      ["texMathMatcher"] = { fg = WHITE },
+      ["texDelimiter"] = { fg = WHITE },
+      ["texSuperscript"] = { fg = WHITE },
+      ["Special"] = { fg = WHITE },
+      ["Statement"] = { fg = PURPLE },
+      ["texTypeSize"] = { fg = PURPLE },
+      ["texDocTypeArgs"] = { fg = LIGHT_ORANGE },
+      ["texTypeStyle"] = { fg = FADED_GREEN },
+      ["texMathOper"] = { fg = WHITE },
+      -- ["texMathZone"] = { fg = },
+
     }
 
     -- change color of icons

@@ -3,7 +3,7 @@ local on_init = require("configs.lsp.lspconfig").on_init
 local capabilities = require("configs.lsp.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "texlab" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -28,6 +28,7 @@ lspconfig.clangd.setup {
   cmd = {
     "clangd",
     "--offset-encoding=utf-16",
+    "-nocudalib"
   }
 }
 
