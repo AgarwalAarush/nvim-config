@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua-language-server",  'stylua', "html-lsp", "css-lsp", "basedpyright", "clangd", "texlab"},
+  ensure_installed = { "lua-language-server",  'stylua', "html-lsp", "css-lsp", "basedpyright", "clangd", "texlab", "tectonic"},
 
   PATH = "skip",
 
